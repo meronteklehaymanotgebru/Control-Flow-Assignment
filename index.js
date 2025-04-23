@@ -131,15 +131,18 @@ function registeredUsers(users) {
 }
 users = ["Meron", "Nebyat", "Solyana", "Axumawit"];
 registeredUsers(users);
-function examRetakeChance() {
-    let score = 0;
+function examRetakeChance(scores) {
+  
+scores.forEach(score=>{
     let attempt=0;
     do {
-        console.log(`You can retake the test and your score is ${score}`)
+        console.log(`You can retake the test and your score is ${score}.`)
         score += 10;
         attempt++;
     }
     while (score < 50);
-   console.log("Passed!");
+   console.log(`Passed after ${attempt} attempts!`);
+})
+   
 }
-examRetakeChance();
+examRetakeChance([40,0,20,60,50,20]);
